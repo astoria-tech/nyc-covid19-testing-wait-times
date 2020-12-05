@@ -6,10 +6,10 @@ on:
     - cron: 0 8,11,14,17,19 * * *
 
 jobs:
-  download-file:
+  download-latest-file:
     name: Download wait time file and commit it
     runs-on: ubuntu-latest
-    steps: 
+    steps:
     - name: Checkout repo
       uses: actions/checkout@v2
 
@@ -21,7 +21,30 @@ jobs:
       with:
         author_name: Vivek Ranjan
         author_email: vivek@vivekranjan.me
-        message: "Latest file"
+        message: "Latest update"
         add: "*.pdf"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update-csv:
+    name: Download wait time file and commit it
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '15.x'
+      - run: npm install
+      - run: node index.js
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v5
+        with:
+          author_name: Vivek Ranjan
+          author_email: vivek@vivekranjan.me
+          message: "Latest wait times"
+          add: "wait-times.csv"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

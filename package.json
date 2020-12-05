@@ -1,0 +1,21 @@
+{
+  "name": "nyc-covid19-testing-wait-times",
+  "version": "1.0.0",
+  "description": "Archive and analyse COVID-19 testing wait times in NYC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//astoria-tech/nyc-covid19-testing-wait-times.git"
+  },
+  "author": "Astoria Digital",
+  "license": "ISC",
+  "dependencies": {
+    "crawler-request": "^1.2.2",
+    "csv": "^5.3.2",
+    "moment": "^2.29.1",
+    "objects-to-csv": "^1.3.6"
+  }
+}
