@@ -1,4 +1,4 @@
-name: Download-Wait-Times
+name: Archive/analyze wait times
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   download-latest-file:
-    name: Download wait time file and commit it
+    name: Archive wait times PDF
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
@@ -27,7 +27,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   update-csv:
-    name: Download wait time file and commit it
+    name: Parse and update CSV for wait times
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
