@@ -21,10 +21,10 @@ let blockEnded = true;
 let clinicInProgress = true;
 const emptyWaitTime = {
     'clinic': null,
-    'date': null,
     'reported_time_unix': null,
     'reported_time_human': null,
-    'wait_time_minutes': null
+    'wait_time_minutes': null,
+    'wait_time_original': null
 };
 const date = new Date();
 const currentDate = date.toLocaleDateString("en-US");
@@ -39,8 +39,7 @@ crawler("https://hhinternet.blob.core.windows.net/wait-times/testing-wait-times.
             if (blockEnded) {
                 waitTime = {
                     ...emptyWaitTime,
-                    'clinic': line,
-                    'date': currentDate
+                    'clinic': line
                 }
             }
             if (line.indexOf('Last Reported Time:') !== -1) {
@@ -48,7 +47,9 @@ crawler("https://hhinternet.blob.core.windows.net/wait-times/testing-wait-times.
                 let reportedTime = line.replace('Last Reported Time: ', '').trim()
                 let reportedTimeUnix = null;
                 if (reportedTime.length) {
-                    reportedTimeUnix = moment(reportedTime, 'h:mm A').unix();
+                    let parsedReportedTime = moment.parseZone(currentDate + ' ' + reportedTime + ' -5:00', 'MM/DD/YYYY h:mm A ZZ');
+                    reportedTimeUnix = parsedReportedTime.unix();
+                    reportedTime = parsedReportedTime.format('MM/DD/YYYY HH:mm');
                 }
                 waitTime['reported_time_unix'] = reportedTimeUnix;
                 waitTime['reported_time_human'] = reportedTime;
@@ -71,16 +72,11 @@ crawler("https://hhinternet.blob.core.windows.net/wait-times/testing-wait-times.
                     currentWaitTime = 90;
                 } else if (line.indexOf('1.5-2 Hours') !== -1) {
                     currentWaitTime = 120;
-                } else if (line.indexOf('2-2.5 Hours') !== -1) {
+                } else if (line.indexOf('More Than 2 Hours') !== -1) {
                     currentWaitTime = 150;
-                } else if (line.indexOf('2.5-3 Hours') !== -1) {
-                    currentWaitTime = 180;
-                } else if (line.indexOf('3-3.5 Hours') !== -1) {
-                    currentWaitTime = 210;
-                } else if (line.indexOf('3.5-4 Hours') !== -1) {
-                    currentWaitTime = 240;
                 }
                 waitTime['wait_time_minutes'] = currentWaitTime;
+                waitTime['wait_time_original'] = line;
             }
         }
         prevLine = line;

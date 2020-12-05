@@ -1,33 +1,65 @@
-clinic,date,reported_time_unix,reported_time_human,wait_time_minutes
-4101 White Plains Road,12/5/2020,1607197680,2:48 PM,30
-Bay Ridge 5th Avenue,12/5/2020,1607198940,3:09 PM,30
-Beach 39th,12/5/2020,1607190000,12:40 PM,60
-Bellevue Hospital Cent...,12/5/2020,1607195460,2:11 PM,30
-Bensonhurst 14th Avenue,12/5/2020,1607194740,1:59 PM,60
-Canarsie Municipal Lot,12/5/2020,1607201220,3:47 PM,0
-Co-op City Retail Space,12/5/2020,1607196000,2:20 PM,30
-Elmhurst Hospital Cent...,12/5/2020,1607195880,2:18 PM,60
-Greenbelt Recreational...,12/5/2020,1607180520,10:02 AM,90
-Harlem Hospital Center,12/5/2020,1607200440,3:34 PM,30
-Highbridge Pool,12/5/2020,1607195940,2:19 PM,90
-Jacobi Medical Center,12/5/2020,1607194920,2:02 PM,30
-JFK Airport,12/5/2020,1607194860,2:01 PM,30
-Kew Gardens,12/5/2020,1607194440,1:54 PM,120
-Kings County Hospital ...,12/5/2020,1607196420,2:27 PM,30
-Lefferts,12/5/2020,1607197500,2:45 PM,60
-Lincoln Medical Center,12/5/2020,1607194860,2:01 PM,0
-Mariners Harbor Library,12/5/2020,1607192580,1:23 PM,30
-Metropolitan Hospital ...,12/5/2020,1607194800,2:00 PM,60
-Midwood,12/5/2020,1607198640,3:04 PM,60
-Morrisania Diagnostic ...,12/5/2020,1607194560,1:56 PM,60
-Mt. Loretto,12/5/2020,1607196960,2:36 PM,120
-Northern Boulevard,12/5/2020,1607189940,12:39 PM,60
-Old Broadway,12/5/2020,1607189700,12:35 PM,0
-Queens Hospital Center,12/5/2020,1607194920,2:02 PM,60
-Rain Boston Road Senio...,12/5/2020,1607195700,2:15 PM,0
-St. Albans,12/5/2020,1607199060,3:11 PM,30
-St. George Ferry Termi...,12/5/2020,1607197140,2:39 PM,90
-St. James Recreational...,12/5/2020,1607197680,2:48 PM,120
-Starret City,12/5/2020,1607195820,2:17 PM,30
-Windsor Park Library,12/5/2020,1607200920,3:42 PM,60
-Woodhull Medical Center,12/5/2020,1607201640,3:54 PM,90
+clinic,reported_time_unix,reported_time_human,wait_time_minutes
+4101 White Plains Road,1607197680,12/05/2020 12:48,30
+Bay Ridge 5th Avenue,1607198940,12/05/2020 15:09,30
+Beach 39th,1607190000,12/05/2020 12:40,60
+Bellevue Hospital Cent...,1607195460,12/05/2020 14:11,30
+Bensonhurst 14th Avenue,1607194740,12/05/2020 13:59,60
+Canarsie Municipal Lot,1607201220,12/05/2020 15:47,0
+Co-op City Retail Space,1607196000,12/05/2020 14:20,30
+Elmhurst Hospital Cent...,1607195880,12/05/2020 14:18,60
+Greenbelt Recreational...,1607180520,12/05/2020 10:02,90
+Harlem Hospital Center,1607200440,12/05/2020 15:34,30
+Highbridge Pool,1607195940,12/05/2020 2:19,90
+Jacobi Medical Center,1607194920,12/05/2020 14:02,30
+JFK Airport,1607194860,12/05/2020 14:01,30
+Kew Gardens,1607194440,12/05/2020 13:54,120
+Kings County Hospital ...,1607196420,12/05/2020 14:27,30
+Lefferts,1607197500,12/05/2020 2:45,60
+Lincoln Medical Center,1607194860,12/05/2020 14:01,0
+Mariners Harbor Library,1607192580,12/05/2020 13:23,30
+Metropolitan Hospital ...,1607194800,12/05/2020 14:00,60
+Midwood,1607198640,12/05/2020 15:04,60
+Morrisania Diagnostic ...,12/05/2020 1607194560,14:56,60
+Mt. Loretto,1607196960,12/05/2020 14:36,120
+Northern Boulevard,1607189940,12/05/2020 12:39,60
+Old Broadway,1607189700,12/05/2020 12:35,0
+Queens Hospital Center,1607194920,12/05/2020 14:02,60
+Rain Boston Road Senio...,1607195700,12/05/2020 14:15,0
+St. Albans,1607199060,12/05/2020 15:11,30
+St. George Ferry Termi...,1607197140,12/05/2020 14:39,90
+St. James Recreational...,1607197680,12/05/2020 14:48,120
+Starret City,1607195820,12/05/2020 4:17,30
+Windsor Park Library,1607200920,12/05/2020 15:42,60
+Woodhull Medical Center,1607201640,12/05/2020 15:54,90
+4101 White Plains Road,1607185620,12/05/2020 16:27,30
+Bay Ridge 5th Avenue,1607180940,12/05/2020 15:09,30
+Beach 39th,1607186640,12/05/2020 16:44,90
+Bellevue Hospital Cent...,1607177460,12/05/2020 14:11,30
+Bensonhurst 14th Avenue,1607184420,12/05/2020 16:07,60
+Canarsie Municipal Lot,1607183220,12/05/2020 15:47,0
+Co-op City Retail Space,1607187060,12/05/2020 16:51,60
+Elmhurst Hospital Cent...,1607177880,12/05/2020 14:18,60
+Greenbelt Recreational...,1607184660,12/05/2020 16:11,90
+Harlem Hospital Center,1607182440,12/05/2020 15:34,30
+Highbridge Pool,1607188620,12/05/2020 17:17,90
+Jacobi Medical Center,1607176920,12/05/2020 14:02,30
+JFK Airport,1607188980,12/05/2020 17:23,30
+Kew Gardens,1607184780,12/05/2020 16:13,150
+Kings County Hospital ...,1607184780,12/05/2020 16:13,120
+Lefferts,1607184780,12/05/2020 16:13,150
+Lincoln Medical Center,1607176860,12/05/2020 14:01,0
+Mariners Harbor Library,1607174580,12/05/2020 13:23,30
+Metropolitan Hospital ...,1607176800,12/05/2020 14:00,60
+Midwood,1607186160,12/05/2020 16:36,30
+Morrisania Diagnostic ...,1607176560,12/05/2020 13:56,60
+Mt. Loretto,1607185740,12/05/2020 16:29,150
+Northern Boulevard,1607189100,12/05/2020 17:25,60
+Old Broadway,1607186280,12/05/2020 16:38,0
+Queens Hospital Center,1607184660,12/05/2020 16:11,60
+Rain Boston Road Senio...,1607184960,12/05/2020 16:16,0
+St. Albans,1607186220,12/05/2020 16:37,0
+St. George Ferry Termi...,1607188920,12/05/2020 17:22,120
+St. James Recreational...,1607184720,12/05/2020 16:12,120
+Starret City,1607177820,12/05/2020 14:17,30
+Windsor Park Library,1607182920,12/05/2020 15:42,60
+Woodhull Medical Center,1607183640,12/05/2020 15:54,90
