@@ -19,7 +19,13 @@ let prevLine = '';
 let done = false;
 let blockEnded = true;
 let clinicInProgress = true;
-const emptyWaitTime = {'clinic': null, 'date': null, 'reported_time_unix': null, 'reported_time_human': null, 'wait_time_minutes': null};
+const emptyWaitTime = {
+    'clinic': null,
+    'date': null,
+    'reported_time_unix': null,
+    'reported_time_human': null,
+    'wait_time_minutes': null
+};
 const date = new Date();
 const currentDate = date.toLocaleDateString("en-US");
 crawler("https://hhinternet.blob.core.windows.net/wait-times/testing-wait-times.pdf").then(function (response) {
@@ -47,7 +53,10 @@ crawler("https://hhinternet.blob.core.windows.net/wait-times/testing-wait-times.
                 waitTime['reported_time_unix'] = reportedTimeUnix;
                 waitTime['reported_time_human'] = reportedTime;
                 if (waitTime['wait_time_minutes'] !== null) {
-                    waitTimes.push(waitTime)
+                    let add = !waitTimes.some(e => waitTime['clinic'].indexOf(e['clinic']) !== -1 && e['reported_time_unix'] == waitTime['reported_time_unix']);
+                    if (add) {
+                        waitTimes.push(waitTime)
+                    }
                 }
             } else {
                 blockEnded = false;
