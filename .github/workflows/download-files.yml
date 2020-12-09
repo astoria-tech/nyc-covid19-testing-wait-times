@@ -3,7 +3,7 @@ name: Archive/analyze wait times
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 0,13,15,17,19,21,23 * * *
+    - cron: 0 0,11,13,15,17,19,21,23 * * *
 
 jobs:
   download-latest-file:
