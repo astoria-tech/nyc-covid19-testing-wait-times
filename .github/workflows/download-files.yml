@@ -3,29 +3,9 @@ name: Archive/analyze wait times
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 0,11,13,15,17,19,21,23 * * *
+    - cron: 0 0,11,12,13,14,15,16,17,18,19,20,21,23 * * *
 
 jobs:
-  download-latest-file:
-    name: Archive wait times PDF
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-
-    - name: Download latest file
-      run: cd archive && wget --output-document=`date +%Y-%m-%d_%H:%M:%S`.pdf https://hhinternet.blob.core.windows.net/wait-times/testing-wait-times.pdf
-
-    - name: Commit changes
-      uses: EndBug/add-and-commit@v5
-      with:
-        author_name: Vivek Ranjan
-        author_email: vivek@vivekranjan.me
-        message: "Latest update"
-        add: "*.pdf"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   update-csv:
     name: Parse and update CSV for wait times
     runs-on: ubuntu-latest
