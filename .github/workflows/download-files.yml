@@ -1,30 +1,27 @@
-name: Archive/analyze wait times
+name: Archive wait times PDF
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 0,11,12,13,14,15,16,17,18,19,20,21,23 * * *
+    - cron: 2 0,11,12,13,14,15,16,17,18,19,20,21,23 * * *
 
 jobs:
-  update-csv:
-    name: Parse and update CSV for wait times
+  download-latest-file:
+    name: Archive wait times PDF
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '15.x'
-      - run: npm install
-      - run: node index.js
+    - name: Checkout repo
+      uses: actions/checkout@v2
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v5
-        with:
-          author_name: Vivek Ranjan
-          author_email: vivek@vivekranjan.me
-          message: "Latest wait times"
-          add: "wait-times.csv"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Download latest file
+      run: cd archive && wget --output-document=`date +%Y-%m-%d_%H:%M:%S`.pdf https://hhinternet.blob.core.windows.net/wait-times/testing-wait-times.pdf
+
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v5
+      with:
+        author_name: Vivek Ranjan
+        author_email: vivek@vivekranjan.me
+        message: "Latest update"
+        add: "*.pdf"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
